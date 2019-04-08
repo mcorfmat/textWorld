@@ -6,7 +6,7 @@ public class Player {
     ArrayList<Item> items;
     Level.Room currentRoom;
 
-    public Player(String name, String description){
+    public Player(String name, String description) {
         items = new ArrayList<>();
         this.name = name;
         this.description = description;
@@ -27,7 +27,7 @@ public class Player {
         return null;
     }
 
-    public boolean destroyItem(String name){
+    public boolean destroyItem(String name) {
         for (Item item : items) {
             if (item.getName().equals(name)) {
                 return items.remove(item);
@@ -36,13 +36,13 @@ public class Player {
         return false;
     }
 
-    public ArrayList<Item> getItems(){
+    public ArrayList<Item> getItems() {
         return items;
     }
 
-    public void displayInventory(){
+    public void displayInventory() {
         System.out.println("");
-        for (Item item: items) {
+        for (Item item : items) {
             System.out.print(item.getName() + ", ");
         }
     }
@@ -51,11 +51,11 @@ public class Player {
         return currentRoom;
     }
 
-    public void setCurrentRoom(Level.Room newRoom){
+    public void setCurrentRoom(Level.Room newRoom) {
         currentRoom = newRoom;
     }
 
-    public boolean moveToRoom(String name){
+    public boolean moveToRoom(String name) {
         Level.Room moveTo = currentRoom.getNeighbor(name);
         if (moveTo == null) {
             return false;

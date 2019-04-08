@@ -33,7 +33,7 @@ public class Main {
                 player.addItem(player.getCurrentRoom().removeItem(words[1]));
             } else if (words[0].equals("quit")) {
                 break;
-            } else if (words[0].equals("drop") && words.length >= 2){
+            } else if (words[0].equals("drop") && words.length >= 2) {
                 player.currentRoom.addItem(player.removeItem(words[1]));
                 System.out.println("Dropped" + words[1] + " and added it to the room");
             } else {

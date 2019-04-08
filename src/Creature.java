@@ -7,19 +7,19 @@ public abstract class Creature {
 
     public abstract void move();
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
 
-    public Level.Room getCurrentRoom(){
+    public Level.Room getCurrentRoom() {
         return currentRoom;
     }
 
-    public void setCurrentRoom(Level.Room newRoom){
+    public void setCurrentRoom(Level.Room newRoom) {
         this.currentRoom = newRoom;
     }
 }
