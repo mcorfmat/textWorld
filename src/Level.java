@@ -50,10 +50,12 @@ public class Level {
         this.addRoom("closet", "Clothes. What else did you expect?");
         this.addRoom("dungeon", "Huh, so there actually was something besides clothes in the closet.");
         this.addRoom("bedroom", "A place to rest.");
+        this.addRoom("attic", "really hot");
 
         this.addUndirectedEdge("hall", "bedroom");
         this.addDirectedEdge("hall", "dungeon");
         this.addUndirectedEdge("hall", "closet");
+        this.addUndirectedEdge("closet", "attic");
 
         Item mug = new Item("mug", "for drinking");
         Item cookie = new Item("cookie", "requires milk");
@@ -75,9 +77,9 @@ public class Level {
         this.getRoom("hall").addItem(PS4);
 
         this.getRoom("closet").addItem(oldLegoSet);
-        this.getRoom("closet").addItem(rustyKey);
 
-        this.getRoom("dungeon").addItem(PS4);
+        this.getRoom("attic").addItem(rustyKey);
+
         this.getRoom("dungeon").addItem(cookie);
     }
 
