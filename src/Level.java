@@ -22,7 +22,7 @@ public class Level {
     }
 
     public void moveCreatures() {
-        for (Creature creature: creatures) {
+        for (Creature creature : creatures) {
             creature.move();
         }
     }
@@ -117,14 +117,14 @@ public class Level {
         }
 
         public Room getNeighbor(String name) {
-            if (neighbors.get(name) != null){
+            if (neighbors.get(name) != null) {
                 return neighbors.get(name);
             }
 
             return null;
         }
 
-        public boolean isItANeighbor(String name){
+        public boolean isItANeighbor(String name) {
             return (getNeighbor(name) != null);
         }
 
@@ -132,19 +132,19 @@ public class Level {
             return name;
         }
 
-        public HashMap<String, Room> getNeighbors(){
+        public HashMap<String, Room> getNeighbors() {
             return neighbors;
         }
 
-        public ArrayList<Item> getItems(){
+        public ArrayList<Item> getItems() {
             return items;
         }
 
-        public void addItem(Item item){
+        public void addItem(Item item) {
             items.add(item);
         }
 
-        public Item removeItem(String name){
+        public Item removeItem(String name) {
             for (Item item : items) {
                 if (item.getName().equals(name)) {
                     Item removedItem = item;
@@ -155,10 +155,10 @@ public class Level {
             return null;
         }
 
-        public void displayItems(){
+        public void displayItems() {
             System.out.println("");
 
-            for (Item item: items) {
+            for (Item item : items) {
                 System.out.print(item.getName() + ", ");
             }
         }
@@ -167,14 +167,14 @@ public class Level {
             creatures.add(newCreature);
         }
 
-        public void removeCreature(Creature creature){
+        public void removeCreature(Creature creature) {
             creatures.remove(creature);
         }
 
         public void displayCreatures() {
             System.out.println("");
 
-            for (Creature creature: creatures) {
+            for (Creature creature : creatures) {
                 System.out.print(creature.getName() + ", ");
             }
         }
