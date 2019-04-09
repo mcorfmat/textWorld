@@ -14,8 +14,8 @@ public class Main {
         Scanner s = new Scanner(System.in);
 
         do {
-            System.out.println("You are in the " + player.getCurrentRoom().getName());
-            System.out.println("What do you want to do? >");
+            System.out.println("You are now in the " + player.getCurrentRoom().getName() + ".");
+            System.out.println("What would you like to do? >");
             response = s.nextLine();
 
             String[] words = response.split(" ");
@@ -31,11 +31,12 @@ public class Main {
                 player.getCurrentRoom().addNeighbor(new Level().new Room(words[2], "Blank"));
             } else if (words[0].equals("take") && words.length >= 2) {
                 player.addItem(player.getCurrentRoom().removeItem(words[1]));
+                System.out.println("You took the " + words[1] + " and added it to your inventory.");
             } else if (words[0].equals("quit")) {
                 break;
             } else if (words[0].equals("drop") && words.length >= 2) {
                 player.currentRoom.addItem(player.removeItem(words[1]));
-                System.out.println("Dropped" + words[1] + " and added it to the room");
+                System.out.println("You dropped the " + words[1] + " and added it to the room.");
             } else {
                 System.out.println("You can type \"look\" to find nearby rooms, \" go _roomname_ \" to go to it, \"add room <roomname\" to add a room, or \"quit\" to exit.");
             }
