@@ -14,6 +14,14 @@ public class Level {
         rooms.put(name, n);
     }
 
+    public Level.Room getRandomRoom(){
+        ArrayList<Level.Room> roomsArr = new ArrayList<>(rooms.values());
+
+        int randInt = (int) (Math.random() * roomsArr.size());
+
+        return roomsArr.get(randInt);
+    }
+
     public void addDirectedEdge(String name1, String name2) {
         Room n1 = getRoom(name1);
         Room n2 = getRoom(name2);
@@ -65,22 +73,19 @@ public class Level {
 
         creatures = new ArrayList<>();
 
-        creatures.add(new Chicken("Bob", "*cluck*", this.getRoom("hall")));
-        creatures.add(new Chicken("Bobby", "*cluck*", this.getRoom("hall")));
-        creatures.add(new Chicken("Bobert", "*cluck*", this.getRoom("hall")));
+        creatures.add(new Chicken("Bob", "*cluck*", this.getRandomRoom()));
+        creatures.add(new Chicken("Bobby", "*cluck*", this.getRandomRoom()));
+        creatures.add(new Chicken("Bobert", "*cluck*", this.getRandomRoom()));
 
-        creatures.add(new Wumpus("Steve", "*anti-social*", this.getRoom("hall"), player));
-        creatures.add(new Wumpus("Steven", "*anti-social*", this.getRoom("hall"), player));
+        creatures.add(new Wumpus("Steve", "*anti-social*", this.getRandomRoom(), player));
+        creatures.add(new Wumpus("Steven", "*anti-social*", this.getRandomRoom(), player));
 
 
-        this.getRoom("hall").addItem(mug);
-        this.getRoom("hall").addItem(PS4);
-
-        this.getRoom("closet").addItem(oldLegoSet);
-
-        this.getRoom("attic").addItem(rustyKey);
-
-        this.getRoom("dungeon").addItem(cookie);
+        this.getRandomRoom().addItem(mug);
+        this.getRandomRoom().addItem(PS4);
+        this.getRandomRoom().addItem(oldLegoSet);
+        this.getRandomRoom().addItem(rustyKey);
+        this.getRandomRoom().addItem(cookie);
     }
 
     public class Room {
