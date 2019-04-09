@@ -35,6 +35,10 @@ public class Level {
         }
     }
 
+    public HashMap<String, Room> getAllRooms(){
+        return rooms;
+    }
+
     public void addUndirectedEdge(String name1, String name2) {
         Room n1 = getRoom(name1);
         Room n2 = getRoom(name2);
@@ -73,9 +77,9 @@ public class Level {
 
         creatures = new ArrayList<>();
 
-        creatures.add(new Chicken("Bob", "*cluck*", this.getRandomRoom()));
-        creatures.add(new Chicken("Bobby", "*cluck*", this.getRandomRoom()));
-        creatures.add(new Chicken("Bobert", "*cluck*", this.getRandomRoom()));
+        creatures.add(new Chicken("Bob", "*cluck*", this.getRandomRoom(), this.getAllRooms()));
+        creatures.add(new Chicken("Bobby", "*cluck*", this.getRandomRoom(), this.getAllRooms()));
+        creatures.add(new Chicken("Bobert", "*cluck*", this.getRandomRoom(), this.getAllRooms()));
 
         creatures.add(new Wumpus("Steve", "*anti-social*", this.getRandomRoom(), player));
         creatures.add(new Wumpus("Steven", "*anti-social*", this.getRandomRoom(), player));

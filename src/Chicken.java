@@ -4,9 +4,8 @@ import java.util.HashMap;
 public class Chicken extends Creature {
     private HashMap<String, Level.Room> rooms;
 
-    public Chicken(String name, String description, Level.Room currentRoom) {
-        rooms = currentRoom.getNeighbors();
-
+    public Chicken(String name, String description, Level.Room currentRoom, HashMap<String, Level.Room> rooms) {
+        this.rooms = rooms;
         this.currentRoom = currentRoom;
         this.name = name;
         this.description = description;
