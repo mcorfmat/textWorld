@@ -81,8 +81,8 @@ public class Level {
         creatures.add(new Chicken("Bobby", "*cluck*", this.getRandomRoom(), this.getAllRooms()));
         creatures.add(new Chicken("Bobert", "*cluck*", this.getRandomRoom(), this.getAllRooms()));
 
-        creatures.add(new Wumpus("Steve", "*anti-social*", this.getRandomRoom(), player));
-        creatures.add(new Wumpus("Steven", "*anti-social*", this.getRandomRoom(), player));
+        creatures.add(new Wumpus("Steve", "*anti-social*", this.getRandomRoom(), player, this.getAllRooms()));
+        creatures.add(new Wumpus("Steven", "*anti-social*", this.getRandomRoom(), player, this.getAllRooms()));
 
 
         this.getRandomRoom().addItem(mug);
@@ -169,8 +169,6 @@ public class Level {
         }
 
         public void displayItems() {
-            System.out.println("");
-
             for (Item item : items) {
                 System.out.print(item.getName() + ", ");
             }
@@ -185,8 +183,6 @@ public class Level {
         }
 
         public void displayCreatures() {
-            System.out.println("");
-
             for (Creature creature : creatures) {
                 System.out.print(creature.getName() + ", ");
             }

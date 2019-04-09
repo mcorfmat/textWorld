@@ -5,8 +5,8 @@ public class Wumpus extends Creature {
     private HashMap<String, Level.Room> rooms;
     private Player player;
 
-    public Wumpus(String name, String description, Level.Room currentRoom, Player player) {
-        rooms = currentRoom.getNeighbors();
+    public Wumpus(String name, String description, Level.Room currentRoom, Player player, HashMap<String, Level.Room> rooms) {
+        this.rooms = rooms;
         this.player = player;
 
         this.currentRoom = currentRoom;

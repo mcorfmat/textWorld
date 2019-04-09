@@ -14,7 +14,7 @@ public class Main {
         Scanner s = new Scanner(System.in);
 
         do {
-            System.out.println("You are now in the " + player.getCurrentRoom().getName() + ".");
+            System.out.println("[You are now in the " + player.getCurrentRoom().getName() + "]");
             System.out.println("What would you like to do? >");
             response = s.nextLine();
 
@@ -25,8 +25,14 @@ public class Main {
                 level.moveCreatures();
             } else if (words[0].equals("look")) {
                 System.out.println(player.getCurrentRoom().getNeighborNames());
+                System.out.println("");
+                System.out.println("[Items in this Room]");
                 player.getCurrentRoom().displayItems();
+                System.out.println("");
+                System.out.println("[Creatures in this Room]");
                 player.getCurrentRoom().displayCreatures();
+                System.out.println("");
+                System.out.println("");
             } else if (words[0].equals("add") && words.length >= 3) {
                 player.getCurrentRoom().addNeighbor(new Level().new Room(words[2], "Blank"));
             } else if (words[0].equals("take") && words.length >= 2) {
