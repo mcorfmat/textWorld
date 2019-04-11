@@ -74,7 +74,7 @@ public class Level {
         this.addRoom("kitchen", "I'm very hungry...");
 
         this.addUndirectedEdge("hall", "bedroom");
-        this.addDirectedEdge("hall", "dungeon");
+        this.addUndirectedEdge("hall", "dungeon");
         this.addUndirectedEdge("hall", "closet");
         this.addUndirectedEdge("closet", "attic");
         this.addUndirectedEdge("bedroom", "lounge");
@@ -96,6 +96,9 @@ public class Level {
 
         creatures.add(new Wumpus("Steve", "*anti-social*", this.getRandomRoom(), player, this.getAllRooms()));
         creatures.add(new Wumpus("Steven", "*anti-social*", this.getRandomRoom(), player, this.getAllRooms()));
+
+        creatures.add(new PopStar("Jenna", "*do you want my autograph?*", this.getRandomRoom(), player));
+        creatures.add(new PopStar("Jennifer", "*do you want my autograph?", this.getRandomRoom(), player));
 
         this.getRandomRoom().addItem(mug);
         this.getRandomRoom().addItem(PS4);

@@ -40,8 +40,8 @@ public class PopStar extends Creature {
             possibleRooms.add(playerNeighbors.get(i));
 
             ArrayList<Level.Room> playerNeighborNeighbors = new ArrayList<>(playerNeighbors.get(i).getNeighbors().values());
-            for (int j = 0; j < playerNeighborNeighbors.size(); i++){
-                possibleRooms.add(playerNeighborNeighbors.get(i));
+            for (int j = 0; j < playerNeighborNeighbors.size(); j++){
+                possibleRooms.add(playerNeighborNeighbors.get(j));
             }
         }
 
