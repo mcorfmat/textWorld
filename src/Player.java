@@ -69,14 +69,13 @@ public class Player {
     public boolean isTwoOrLessNeighborsAway(Level.Room creatureRoom, HashMap<String, Level.Room> rooms) {
         ArrayList<Level.Room> roomsArr = new ArrayList<>(rooms.values());
 
-        for (int i = 0; i < roomsArr.size(); i++){
-            if(roomsArr.get(i).getNeighbor(creatureRoom.getName()) != null) {
+        for (int i = 0; i < roomsArr.size(); i++) {
+            if (roomsArr.get(i).getNeighbor(creatureRoom.getName()) != null) {
                 return true;
-            }
-            else {
+            } else {
                 ArrayList<Level.Room> roomNeighbors = new ArrayList<>(roomsArr.get(i).getNeighbors().values());
-                for(int j = 0; j < roomNeighbors.size(); j++){
-                    if (roomNeighbors.get(j).getNeighbor(creatureRoom.getName()) != null){
+                for (int j = 0; j < roomNeighbors.size(); j++) {
+                    if (roomNeighbors.get(j).getNeighbor(creatureRoom.getName()) != null) {
                         return true;
                     }
                 }

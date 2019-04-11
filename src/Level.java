@@ -15,7 +15,7 @@ public class Level {
         rooms.put(name, n);
     }
 
-    public ArrayList<Creature> getCreatures(){
+    public ArrayList<Creature> getCreatures() {
         return creatures;
     }
 

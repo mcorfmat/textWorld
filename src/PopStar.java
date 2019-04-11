@@ -17,7 +17,7 @@ public class PopStar extends Creature {
     }
 
     public void move() {
-        if( player.isTwoOrLessNeighborsAway(currentRoom, rooms)){
+        if (player.isTwoOrLessNeighborsAway(currentRoom, rooms)) {
             currentRoom.removeCreature(this);
             this.currentRoom = moveCloser(player.currentRoom);
             currentRoom.addCreature(this);
@@ -38,11 +38,11 @@ public class PopStar extends Creature {
         ArrayList<Level.Room> playerNeighbors = new ArrayList<>(playerRoom.getNeighbors().values());
         ArrayList<Level.Room> possibleRooms = new ArrayList<>();
 
-        for (int i = 0; i < playerNeighbors.size(); i++){
+        for (int i = 0; i < playerNeighbors.size(); i++) {
             possibleRooms.add(playerNeighbors.get(i));
 
             ArrayList<Level.Room> playerNeighborNeighbors = new ArrayList<>(playerNeighbors.get(i).getNeighbors().values());
-            for (int j = 0; j < playerNeighborNeighbors.size(); j++){
+            for (int j = 0; j < playerNeighborNeighbors.size(); j++) {
                 possibleRooms.add(playerNeighborNeighbors.get(j));
             }
         }
