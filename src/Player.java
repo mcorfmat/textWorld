@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Player {
     String name;
@@ -63,5 +64,25 @@ public class Player {
 
         currentRoom = moveTo;
         return true;
+    }
+
+    public boolean isTwoOrLessNeighborsAway(Level.Room creatureRoom, HashMap<String, Level.Room> rooms) {
+        ArrayList<Level.Room> roomsArr = new ArrayList<>(rooms.values());
+
+        for (int i = 0; i < roomsArr.size(); i++){
+            if(roomsArr.get(i).getNeighbor(creatureRoom.getName()) != null) {
+                return true;
+            }
+            else {
+                ArrayList<Level.Room> roomNeighbors = new ArrayList<>(roomsArr.get(i).getNeighbors().values());
+                for(int j = 0; j < roomNeighbors.size(); j++){
+                    if (roomNeighbors.get(j).getNeighbor(creatureRoom.getName()) != null){
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
     }
 }

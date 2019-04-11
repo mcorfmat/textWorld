@@ -1,3 +1,4 @@
+import java.lang.management.PlatformLoggingMXBean;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -12,6 +13,10 @@ public class Level {
     public void addRoom(String name, String description) {
         Room n = new Room(name, description);
         rooms.put(name, n);
+    }
+
+    public ArrayList<Creature> getCreatures(){
+        return creatures;
     }
 
     public Level.Room getRandomRoom() {

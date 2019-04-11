@@ -17,16 +17,34 @@ public class PopStar extends Creature {
     }
 
     public void move() {
-        //TODO - The player should be 2 or less neighbors close to the popStar in order for it to move closer
-        if (player.getCurrentRoom().isItANeighbor(currentRoom.getName()) == true) {
+        if( player.isTwoOrLessNeighborsAway(currentRoom, rooms)){
             this.currentRoom = moveCloser(player.currentRoom);
         }
     }
 
     private Level.Room moveCloser(Level.Room playerRoom) {
+        ArrayList<Level.Room> possibleRooms = new ArrayList<>();
 
-        //TODO - Complete the moveCloser() method which makes the PopStar move closer to the player's currentRoom
+        possibleRooms = getPossibleRooms(playerRoom);
 
-        return playerRoom;
+        int randInt = (int) (Math.random() * possibleRooms.size());
+
+        return possibleRooms.get(randInt);
+    }
+
+    private ArrayList<Level.Room> getPossibleRooms(Level.Room playerRoom) {
+        ArrayList<Level.Room> playerNeighbors = new ArrayList<>(playerRoom.getNeighbors().values());
+        ArrayList<Level.Room> possibleRooms = new ArrayList<>();
+
+        for (int i = 0; i < playerNeighbors.size(); i++){
+            possibleRooms.add(playerNeighbors.get(i));
+
+            ArrayList<Level.Room> playerNeighborNeighbors = new ArrayList<>(playerNeighbors.get(i).getNeighbors().values());
+            for (int j = 0; j < playerNeighborNeighbors.size(); i++){
+                possibleRooms.add(playerNeighborNeighbors.get(i));
+            }
+        }
+
+        return possibleRooms;
     }
 }

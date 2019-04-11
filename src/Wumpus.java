@@ -17,8 +17,7 @@ public class Wumpus extends Creature {
     }
 
     public void move() {
-        //TODO - The player should be 2 or less neighbors close to the wumpus in order for it to move away
-        if (player.getCurrentRoom().isItANeighbor(currentRoom.getName()) == true) {
+        if( player.isTwoOrLessNeighborsAway(currentRoom, rooms)){
             this.currentRoom = getRandomRoom(player.getCurrentRoom());
         }
     }

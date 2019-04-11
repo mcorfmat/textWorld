@@ -30,6 +30,10 @@ public class Main {
             player.setCurrentRoom(player.getCurrentRoom().getNeighbor(words[1]));
             level.moveCreatures();
 
+            for (int i = 0; i < level.getCreatures().size(); i++) {
+                System.out.println(level.getCreatures().get(i).getName() + ", " + level.getCreatures().get(i).getCurrentRoom().getName());
+            }
+
         } else if (words[0].equals("look")) {
             System.out.println(player.getCurrentRoom().getNeighborNames());
             System.out.println("");
