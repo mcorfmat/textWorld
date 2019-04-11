@@ -18,7 +18,9 @@ public class PopStar extends Creature {
 
     public void move() {
         if( player.isTwoOrLessNeighborsAway(currentRoom, rooms)){
+            currentRoom.removeCreature(this);
             this.currentRoom = moveCloser(player.currentRoom);
+            currentRoom.addCreature(this);
         }
     }
 

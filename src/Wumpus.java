@@ -18,7 +18,9 @@ public class Wumpus extends Creature {
 
     public void move() {
         if( player.isTwoOrLessNeighborsAway(currentRoom, rooms)){
+            currentRoom.removeCreature(this);
             this.currentRoom = getRandomRoom(player.getCurrentRoom());
+            currentRoom.addCreature(this);
         }
     }
 

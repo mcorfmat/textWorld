@@ -199,7 +199,7 @@ public class Level {
 
         public void displayCreatures() {
             for (Creature creature : creatures) {
-                System.out.print(creature.getName() + ", ");
+                System.out.print(creature.getName() + "  ");
             }
         }
     }
