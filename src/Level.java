@@ -14,7 +14,7 @@ public class Level {
         rooms.put(name, n);
     }
 
-    public Level.Room getRandomRoom(){
+    public Level.Room getRandomRoom() {
         ArrayList<Level.Room> roomsArr = new ArrayList<>(rooms.values());
 
         int randInt = (int) (Math.random() * roomsArr.size());
@@ -35,7 +35,7 @@ public class Level {
         }
     }
 
-    public HashMap<String, Room> getAllRooms(){
+    public HashMap<String, Room> getAllRooms() {
         return rooms;
     }
 
@@ -91,7 +91,6 @@ public class Level {
 
         creatures.add(new Wumpus("Steve", "*anti-social*", this.getRandomRoom(), player, this.getAllRooms()));
         creatures.add(new Wumpus("Steven", "*anti-social*", this.getRandomRoom(), player, this.getAllRooms()));
-
 
         this.getRandomRoom().addItem(mug);
         this.getRandomRoom().addItem(PS4);
