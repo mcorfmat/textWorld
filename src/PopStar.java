@@ -24,6 +24,7 @@ public class PopStar extends Creature {
     }
 
     private Level.Room moveCloser(Level.Room playerRoom) {
+
         //TODO - Complete the moveCloser() method which makes the PopStar move closer to the player's currentRoom
 
         return playerRoom;

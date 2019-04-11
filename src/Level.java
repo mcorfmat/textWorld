@@ -62,12 +62,20 @@ public class Level {
         this.addRoom("closet", "Clothes. What else did you expect?");
         this.addRoom("dungeon", "Huh, so there actually was something besides clothes in the closet.");
         this.addRoom("bedroom", "A place to rest.");
-        this.addRoom("attic", "really hot");
+        this.addRoom("attic", "It's really hot.");
+        this.addRoom("garden", "There's some nice flowers here.");
+        this.addRoom("garage", "The car is missing...");
+        this.addRoom("lounge", "This couch is really comfortable!");
+        this.addRoom("kitchen", "I'm very hungry...");
 
         this.addUndirectedEdge("hall", "bedroom");
         this.addDirectedEdge("hall", "dungeon");
         this.addUndirectedEdge("hall", "closet");
         this.addUndirectedEdge("closet", "attic");
+        this.addUndirectedEdge("bedroom", "lounge");
+        this.addUndirectedEdge("hall", "garage");
+        this.addUndirectedEdge("kitchen", "garden");
+        this.addUndirectedEdge("hall", "kitchen");
 
         Item mug = new Item("mug", "for drinking");
         Item cookie = new Item("cookie", "requires milk");
